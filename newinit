@@ -1,1 +1,1 @@
-dropsql && createsql && ./manage.py migrate && ./manage.py create_initial_data
+dropsql && ./manage.py migrate && ./manage.py createsuperuser --email=admin@adtrac.ch && ./manage.py create_initial_data

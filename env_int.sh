@@ -1,0 +1,46 @@
+# source this from within your python repo folder
+export DJANGO_SETTINGS_MODULE=brokerage.settings.integration
+echo
+echo DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE
+
+export PROJECT_PATH=$PWD/..
+export PGPASSWORD=postgres
+export PATH=$PATH:$PROJECT_PATH/tools
+export PYTHONPATH=$PWD:$PYTHONPATH
+export GOOGLE_APPLICATION_CREDENTIALS=$PROJECT_PATH/secrets/full_access_integration.json
+export SENDGRID_API_KEY=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
+export GF_API_KEY=87E99246D98994A3F5D28FF6EFBA9905CAFE0A8A372B0381BD22506AF93338E8
+export GF_API_KEY_TEST=D980B990E0953360B450FF6E33ECF908F30A303149C9A7B75C93E2B32C1CB32C
+export ADVERTIMA_SERVICE_TEST_API_KEY=3b1de09a785d3228ce064c471b901425
+export ADVERTIMA_CLIENT_SECRET=d0a12b3a2b451c156775df69b99d5d0a1232a8cdc268800eb79e81bdc0515650
+export ADVERTIMA_TEST_CLIENT_SECRET=776776ee49affd0deeb0566cbf6eb47d7d88a731e7a564d99eef53ae351fb99a
+# source this from within your python repo folder
+
+echo Settings for integration and local database
+
+export DJANGO_SETTINGS_MODULE=brokerage.settings.integration
+echo DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE
+
+export DATABASE_USER=postgres
+echo DATABASE_USER=postgres
+
+export PROJECT_PATH=$PWD/..
+echo PROJECT_PATH=$PWD/..
+
+export PGPASSWORD=postgres
+echo PGPASSWORD=postgres
+
+export TOOLS_PATH=$PROJECT_PATH/tools
+echo TOOLS_PATH=$PROJECT_PATH/tools
+export PATH=$TOOLS_PATH:$PATH
+
+export PYTHONPATH=$PWD:$PYTHONPATH
+echo PYTHONPATH=$PWD:$PYTHONPATH
+
+export GOOGLE_APPLICATION_CREDENTIALS=$PROJECT_PATH/secrets/full_access_integration.json
+echo GOOGLE_APPLICATION_CREDENTIALS=$PROJECT_PATH/secrets/full_access_integration.json
+
+export SENDGRID_API_KEY=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
+export SENDGRID_API_KEY=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
+
+alias proxy='echo No proxy. You are using a local postgres installation'
