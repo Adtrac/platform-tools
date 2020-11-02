@@ -1,0 +1,8 @@
+NEW_CONTEXT=gke_adtrac-${1}_europe-west6-a_brokerage-platform
+OLD_CONTEXT=`kubectl config get-contexts | grep "*" | cut -d ' ' -f 10`
+echo
+echo Switching from $OLD_CONTEXT to $NEW_CONTEXT
+echo
+kubectl config use-context $NEW_CONTEXT
+kubectl config get-contexts
+

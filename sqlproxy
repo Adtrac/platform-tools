@@ -1,1 +1,13 @@
-cloud_sql_proxy -instances=adtrac-int:europe-west6:brokerage-master=tcp:5432 -credential_file=../secrets/GCS_SQL_Access_int.json
+if [ "$1" = "int" ] 
+then
+	cloud_sql_proxy -instances=adtrac-int:europe-west6:brokerage-master=tcp:5432 -credential_file=$HOME/secrets/GCS_SQL_Access_int.json
+elif [ "$1" = 'prod' ]
+then
+        cloud_sql_proxy -instances=adtrac-prod:europe-west6:brokerage-master=tcp:5432 -credential_file=$HOME/secrets/GCS_SQL_Access_prod.json
+elif [ "$1" = 'test' ]
+then
+        cloud_sql_proxy -instances=adtrac-test-424242:europe-west6:brokerage-master=tcp:5432 -credential_file=$HOME/secrets/GCS_SQL_Access_test.json
+elif [ "$1" = 'experimental' ]
+then
+	cloud_sql_proxy -instances=experimental-258714:europe-west6:brokerage-master=tcp:5432 -credential_file=$HOME/secrets/SQL_Access-experimental-258714.json
+fi

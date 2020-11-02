@@ -1,10 +1,10 @@
 # source this from within your python repo folder
-export DJANGO_SETTINGS_MODULE=brokerage.settings.integration
+export DJANGO_SETTINGS_MODULE=brokerage.settings.wgi_local
 echo
 echo DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE
 
 export PROJECT_PATH=$PWD/..
-export PGPASSWORD=temporarypassword
+export PGPASSWORD=postgres
 export PATH=$PATH:$PROJECT_PATH/tools
 export PYTHONPATH=$PWD:$PYTHONPATH
 export GOOGLE_APPLICATION_CREDENTIALS=$PROJECT_PATH/secrets/full_access_integration.json
@@ -18,17 +18,14 @@ export ADVERTIMA_TEST_CLIENT_SECRET=776776ee49affd0deeb0566cbf6eb47d7d88a731e7a5
 
 echo Settings for integration and local database
 
-export DATABASE_USER=tech-db-user
-echo DATABASE_USER=$DATABASE_USER
-
-export DATABASE_PASSWORD=temporarypassword
-echo DATABASE_PASSWORD=DATABASE_PASSWORD
+export DATABASE_USER=postgres
+echo DATABASE_USER=postgres
 
 export PROJECT_PATH=$PWD/..
 echo PROJECT_PATH=$PWD/..
 
-export PGPASSWORD=$DATABASE_PASSWORD
-echo PGPASSWORD=$PGPASSWORD
+export PGPASSWORD=postgres
+echo PGPASSWORD=postgres
 
 export TOOLS_PATH=$PROJECT_PATH/tools
 echo TOOLS_PATH=$PROJECT_PATH/tools

@@ -1,0 +1,2 @@
+POD=`kubectl get pods | grep platform | cut -d ' ' -f 1`
+kubectl logs -f $POD $1

@@ -2,5 +2,5 @@ if [ "$DJANGO_SETTINGS_MODULE" = brokerage.settings.unittest ]
 then
   echo "On test settings. Nothing to do here..."
 else
-  psql -U postgres -h localhost -c "create database \"brokerage-master-database\"" | echo "Using existing data base"
+  psql -U postgres -h localhost -p 5435 -c "create database \"brokerage-master-database\"" | echo "Using existing data base"
 fi

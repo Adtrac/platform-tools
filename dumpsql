@@ -1,2 +1,2 @@
-pg_dump -U postgres -Fc -n public -d brokerage-master-database >dump.dmp
+pg_dump -U postgres -Fc -n public -p 5435 -d brokerage-master-database > $1
 

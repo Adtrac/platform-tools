@@ -4,8 +4,8 @@ then
   rm -f db.sqlite3
 else
   echo Dropping and re-creating postgres public schema
-  psql -U postgres -h localhost -d brokerage-master-database -c "DROP SCHEMA public CASCADE;"
-  psql -U postgres -h localhost -d brokerage-master-database  -c "CREATE SCHEMA public;"
-  psql -U postgres -h localhost -d brokerage-master-database  -c "GRANT ALL ON SCHEMA public TO postgres;"
-  psql -U postgres -h localhost -d brokerage-master-database  -c "GRANT ALL ON SCHEMA public to public"
+  psql -U postgres -h localhost -d brokerage-master-database -p 5435 -c "DROP SCHEMA public CASCADE;"
+  psql -U postgres -h localhost -d brokerage-master-database -p 5435 -c "CREATE SCHEMA public;"
+  psql -U postgres -h localhost -d brokerage-master-database -p 5435 -c "GRANT ALL ON SCHEMA public TO postgres;"
+  psql -U postgres -h localhost -d brokerage-master-database -p 5435 -c "GRANT ALL ON SCHEMA public to public"
 fi

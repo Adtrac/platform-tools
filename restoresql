@@ -1,2 +1,3 @@
-psql -U postgres -h localhost -d brokerage-master-database -c "DROP SCHEMA public CASCADE;"
-pg_restore -U postgres -d brokerage-master-database dump.dmp
+PORT=5435
+psql -U postgres -h localhost -p $PORT -d brokerage-master-database -c "DROP SCHEMA public CASCADE;"
+pg_restore -U postgres -p $PORT -d brokerage-master-database $1

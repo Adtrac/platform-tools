@@ -1,0 +1,28 @@
+# source this from within your python repo folder
+export DJANGO_SETTINGS_MODULE=brokerage.settings.production
+echo
+echo DJANGO_SETTINGS_MODULE set to $DJANGO_SETTINGS_MODULE
+
+export PROJECT_PATH=$PWD/..
+export PATH=$PATH:$PROJECT_PATH/tools
+export PYTHONPATH=$PWD:$PYTHONPATH
+export GF_API_KEY=8859CACD7FF94395DCB50FBCCD1552E3E315EB3EF56C29D06F63E7A232280AE7
+# source this from within your python repo folder
+
+echo Settings for integration and local database
+
+export DATABASE_USER=$DATABASE_USER_PROD
+echo DATABASE_USER=$DATABASE_USER
+
+export PROJECT_PATH=$PWD/..
+echo PROJECT_PATH=$PWD/..
+
+export DATABASE_PASSWORD=$DATABASE_PASSWORD_PROD
+echo PGPASSWORD=$DATABASE_PASSWORD
+
+export TOOLS_PATH=$PROJECT_PATH/tools
+echo TOOLS_PATH=$PROJECT_PATH/tools
+export PATH=$TOOLS_PATH:$PATH
+
+export PYTHONPATH=$PWD:$PYTHONPATH
+echo PYTHONPATH=$PWD:$PYTHONPATH
