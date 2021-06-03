@@ -1,3 +1,8 @@
-PORT=5435
+PORT=$2
+if [ -z "$PORT" ]
+then 
+	PORT=5435
+fi
+echo using port $PORT
 psql -U postgres -h localhost -p $PORT -d brokerage-master-database -c "DROP SCHEMA public CASCADE;"
 pg_restore -U postgres -p $PORT -d brokerage-master-database $1

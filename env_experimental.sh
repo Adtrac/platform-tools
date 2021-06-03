@@ -1,0 +1,4 @@
+export DATABASE_USER=tech-db-user
+export DATABASE_PASSWORD=temporarypassword
+export DATABASE_PORT=5432
+export DJANGO_ALLOW_ASYNC_UNSAFE=true
