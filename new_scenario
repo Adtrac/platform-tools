@@ -1,0 +1,1 @@
+dropsql && createsql && ./manage.py migrate && ./manage.py create_scenario && ./manage.py recreate_roles_delete_site_le
